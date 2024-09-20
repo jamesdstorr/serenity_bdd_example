@@ -1,0 +1,22 @@
+#server:
+#  port: 8080
+#
+#external:
+#  officialjokeapi:
+#    base-url: https://official-joke-api.appspot.com
+#  chucknorrisapi:
+#    base-url: https://api.chucknorris.io
+#  jokeapi:
+#    base-url: https://v2.jokeapi.dev
+server:
+  port: 0 # Use random port to avoid conflicts
+
+external:
+  officialjokeapi:
+    base-url: http://localhost:9561
+  chucknorrisapi:
+    base-url: http://localhost:9561
+  jokeapi:
+    base-url: http://localhost:9561
+  icanhazdadjoke:
+    base-url: http://localhost:9561
