@@ -1,8 +1,13 @@
 package com.jamesstorr.jokes_service.actions;
 
+
+import com.jamesstorr.jokes_service.application.service.JokeService;
+import io.restassured.response.Response;
 import net.serenitybdd.rest.SerenityRest;
 import org.junit.jupiter.api.BeforeEach;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.boot.test.web.server.LocalServerPort;
+import org.springframework.cache.support.NullValue;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.notNullValue;
@@ -12,10 +17,12 @@ public class JokeApiActions {
     private String provider;
     private final String baseUrl;
 
+    @MockBean
+    private JokeService jokeService;
+
     public JokeApiActions(String baseUrl) {
         this.baseUrl = baseUrl;
     }
-
 
     public void givenJokeProvider(String provider) {
         this.provider = provider;
@@ -27,20 +34,20 @@ public class JokeApiActions {
 
     public void whenIRequestAJoke() {
         String endpoint = baseUrl + "/api/jokes";
-        System.out.println("Calling Endpoint: %s with provider value %s".formatted(endpoint, provider));
+        Response response;
         if (provider != null) {
-            SerenityRest.given()
+            response = SerenityRest.given()
                     .queryParam("provider", provider)
                     .when()
                     .get(endpoint)
                     .then()
-                    .statusCode(200);
+                    .extract().response();
         } else {
-            SerenityRest.given()
+            response = SerenityRest.given()
                     .when()
                     .get(endpoint)
                     .then()
-                    .statusCode(200);
+                    .extract().response();
         }
     }
 
@@ -51,8 +58,13 @@ public class JokeApiActions {
 
     public void thenIShouldReceiveARandomJoke() {
         SerenityRest.then()
-                .body("setup", notNullValue())
-                .body("punchline", notNullValue())
+                .body("setup", equalTo("Why did the chicken cross the road?"))
+                .body("punchline", equalTo("To get to the other side!"))
                 .body("provider", notNullValue());
+    }
+
+    public void thenIShouldReceiveAChuckNorrisJoke(){
+        SerenityRest.then()
+                .body("punchline", equalTo("Chuck Norris can divide by zero"));
     }
 }
