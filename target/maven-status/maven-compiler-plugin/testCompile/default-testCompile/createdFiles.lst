@@ -1,1 +1,3 @@
-com/jamesstorr/jokes_service/JokesServiceApplicationTests.class
+com/jamesstorr/jokes_service/acceptancetests/SimpleTest.class
+com/jamesstorr/jokes_service/acceptancetests/WhenRequestingAJoke.class
+com/jamesstorr/jokes_service/actions/JokeApiActions.class

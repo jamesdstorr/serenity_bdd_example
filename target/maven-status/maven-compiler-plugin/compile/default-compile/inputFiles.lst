@@ -1,1 +1,13 @@
-/Users/jamesstorr/Personal Projects/serenity_bdd_example/src/main/java/com/jamesstorr/jokes_service/JokesServiceApplication.java
+/Users/jamesstorr/Projects/serenity_bdd_example/src/main/java/com/jamesstorr/jokes_service/JokesServiceApplication.java
+/Users/jamesstorr/Projects/serenity_bdd_example/src/main/java/com/jamesstorr/jokes_service/api/controller/GlobalExceptionHandler.java
+/Users/jamesstorr/Projects/serenity_bdd_example/src/main/java/com/jamesstorr/jokes_service/api/controller/JokesController.java
+/Users/jamesstorr/Projects/serenity_bdd_example/src/main/java/com/jamesstorr/jokes_service/api/dto/JokeResponse.java
+/Users/jamesstorr/Projects/serenity_bdd_example/src/main/java/com/jamesstorr/jokes_service/application/exception/ProviderNotFoundException.java
+/Users/jamesstorr/Projects/serenity_bdd_example/src/main/java/com/jamesstorr/jokes_service/application/service/JokeService.java
+/Users/jamesstorr/Projects/serenity_bdd_example/src/main/java/com/jamesstorr/jokes_service/application/service/JokeServiceImp.java
+/Users/jamesstorr/Projects/serenity_bdd_example/src/main/java/com/jamesstorr/jokes_service/application/strategy/ChuckNorrisJokeStrategy.java
+/Users/jamesstorr/Projects/serenity_bdd_example/src/main/java/com/jamesstorr/jokes_service/application/strategy/JokeAPIStrategy.java
+/Users/jamesstorr/Projects/serenity_bdd_example/src/main/java/com/jamesstorr/jokes_service/application/strategy/JokeStrategy.java
+/Users/jamesstorr/Projects/serenity_bdd_example/src/main/java/com/jamesstorr/jokes_service/application/strategy/OfficialJokeStrategy.java
+/Users/jamesstorr/Projects/serenity_bdd_example/src/main/java/com/jamesstorr/jokes_service/domain/model/Joke.java
+/Users/jamesstorr/Projects/serenity_bdd_example/src/main/java/com/jamesstorr/jokes_service/infrastructure/config/WebClientConfig.java

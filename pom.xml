@@ -21,8 +21,8 @@
 
 	<properties>
 		<java.version>17</java.version>
-		<serenity.version>4.2.1</serenity.version> <!-- Ensure consistency across Serenity dependencies -->
-		<wiremock.version>3.9.0</wiremock.version>
+		<serenity.version>4.2.1</serenity.version>
+		<junit5.version>5.11.0</junit5.version>
 		<tags></tags>
 	</properties>
 
@@ -47,28 +47,21 @@
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
-
-		<!-- Testing Dependencies -->
+		<dependency>
+			<groupId>org.assertj</groupId>
+			<artifactId>assertj-core</artifactId>
+			<version>3.22.0</version>
+			<scope>test</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>io.projectreactor</groupId>
-			<artifactId>reactor-test</artifactId>
-			<scope>test</scope>
-		</dependency>
 
-		<!-- Serenity BDD Dependencies -->
 		<dependency>
 			<groupId>net.serenity-bdd</groupId>
 			<artifactId>serenity-core</artifactId>
-			<version>${serenity.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>net.serenity-bdd</groupId>
-			<artifactId>serenity-rest-assured</artifactId>
 			<version>${serenity.version}</version>
 			<scope>test</scope>
 		</dependency>
@@ -80,54 +73,30 @@
 		</dependency>
 		<dependency>
 			<groupId>net.serenity-bdd</groupId>
-			<artifactId>serenity-cucumber</artifactId> <!-- Updated for Cucumber 7 -->
+			<artifactId>serenity-screenplay</artifactId>
 			<version>${serenity.version}</version>
 			<scope>test</scope>
 		</dependency>
-		<!-- Serenity Spring Integration -->
 		<dependency>
 			<groupId>net.serenity-bdd</groupId>
-			<artifactId>serenity-spring</artifactId>
+			<artifactId>serenity-ensure</artifactId>
 			<version>${serenity.version}</version>
+			<scope>test</scope>
 		</dependency>
-		<!-- Cucumber Dependencies -->
 		<dependency>
-			<groupId>io.cucumber</groupId>
-			<artifactId>cucumber-java</artifactId>
-			<version>7.11.2</version>
+			<groupId>net.serenity-bdd</groupId>
+			<artifactId>serenity-screenplay-webdriver</artifactId>
+			<version>${serenity.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>net.serenity-bdd</groupId>
+			<artifactId>serenity-rest-assured</artifactId>
+			<version>${serenity.version}</version>
 			<scope>test</scope>
 		</dependency>
 
-		<dependency>
-			<groupId>org.wiremock</groupId>
-			<artifactId>wiremock-jetty12</artifactId>
-			<version>3.9.1</version>
-			<scope>test</scope>
-		</dependency>
 
-		<!-- AssertJ for Fluent Assertions -->
-		<dependency>
-			<groupId>org.assertj</groupId>
-			<artifactId>assertj-core</artifactId>
-			<version>3.24.2</version>
-			<scope>test</scope>
-		</dependency>
-
-		<!-- Cucumber JUnit Platform Engine -->
-		<dependency>
-			<groupId>io.cucumber</groupId>
-			<artifactId>cucumber-junit-platform-engine</artifactId>
-			<version>7.11.2</version>
-			<scope>test</scope>
-		</dependency>
-
-		<!-- JUnit Platform Suite API -->
-		<dependency>
-			<groupId>org.junit.platform</groupId>
-			<artifactId>junit-platform-suite-api</artifactId>
-			<version>1.9.3</version> <!-- Ensure compatibility with your JUnit Platform version -->
-			<scope>test</scope>
-		</dependency>
 
 	</dependencies>
 
@@ -141,6 +110,16 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<!-- Removed exclusion of Lombok to ensure proper functionality -->
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.0.0-M7</version>
+				<configuration>
+					<includes>
+						<include>**/*Test.java</include>
+					</includes>
 				</configuration>
 			</plugin>
 
