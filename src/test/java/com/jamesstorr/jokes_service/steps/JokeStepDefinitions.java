@@ -1,18 +1,15 @@
 package com.jamesstorr.jokes_service.steps;
 
 import com.github.tomakehurst.wiremock.WireMockServer;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.response.Response;
 import net.serenitybdd.rest.SerenityRest;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.web.server.LocalServerPort;
 import static com.github.tomakehurst.wiremock.client.WireMock.*;
-import static com.github.tomakehurst.wiremock.core.WireMockConfiguration.options;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.notNullValue;
 
@@ -22,29 +19,19 @@ public class JokeStepDefinitions {
 
     private String provider;
     private String baseUrl;
-    private static WireMockServer wireMockServer;
 
-    @BeforeAll
-    static void startWireMock() {
-        wireMockServer = new WireMockServer(options()
-                .port(9090)
-        );  // Fixed port 9090
-        wireMockServer.start();
+    @LocalServerPort
+    private int port;
 
-    }
+    @Autowired
+    private WireMockServer wireMockServer;
 
-    @AfterAll
-    static void stopWireMock() {
-        if (wireMockServer != null) {
-            wireMockServer.stop();
-        }
-    }
+    @Before
+    public void setup() {
+        this.baseUrl = "http://localhost:" + port;
+        System.out.println(baseUrl);
 
-    @BeforeEach
-    public void setupStubs() {
-
-        this.baseUrl = "http://localhost:" + 9090;
-
+        // Set up WireMock stubs
         // Stub for OfficialJokeAPI
         wireMockServer.stubFor(get(urlEqualTo("/officialJoke/jokes/random"))
                 .willReturn(aResponse()

@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.notNullValue;
 
-@Component
+
 public class JokeApiActions {
 
     private String provider;

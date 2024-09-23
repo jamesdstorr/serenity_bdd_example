@@ -1,4 +1,4 @@
 $(document).ready(function() {
-CucumberHTML.timelineItems.pushArray([{"id":"eaa65b83-00d0-4c59-b209-657879c9e47b","feature":"Jokes Service","scenario":"Retrieve a joke without specifying a provider","start":1727073608260,"group":1,"content":"","tags":"","end":1727073608282,"className":"failed"},{"id":"2e8868a5-bace-40f8-8e60-76b3d559fc62","feature":"Jokes Service","scenario":"Retrieve a joke from a specific provider","start":1727073608288,"group":1,"content":"","tags":"","end":1727073608298,"className":"failed"}]);
+CucumberHTML.timelineItems.pushArray([{"id":"4607aa2e-9d59-488d-9008-efaf084e6ea6","feature":"Jokes Service","scenario":"Retrieve a joke from a specific provider","start":1727075504256,"group":1,"content":"","tags":"","end":1727075504258,"className":"failed"},{"id":"f9380e59-e762-4279-af16-946fdbfc4fe5","feature":"Jokes Service","scenario":"Retrieve a joke without specifying a provider","start":1727075504240,"group":1,"content":"","tags":"","end":1727075504250,"className":"failed"}]);
 CucumberHTML.timelineGroups.pushArray([{"id":1,"content":"Thread[#1,main,5,main]"}]);
 });
