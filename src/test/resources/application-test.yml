@@ -1,5 +1,5 @@
 server:
-  port: 0  # Let Spring Boot choose a random port
+  port: 8080  # Let Spring Boot choose a random port
 
 external:
   officialjokeapi:

@@ -1,6 +1,7 @@
 package com.jamesstorr.jokes_service.application.strategy;
 
 import com.jamesstorr.jokes_service.domain.model.Joke;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -17,17 +18,17 @@ public class JokeAPIStrategy implements JokeStrategy {
 
     @Data
     @NoArgsConstructor
+    @AllArgsConstructor
     private static class JokeAPIResponse {
         private String type;
-        private String setup;
-        private String delivery;
         private String joke;
+        private String setup;
     }
 
     @Override
     public Joke getJoke() {
         return webClient.get()
-                .uri("/jokes/any")
+                .uri("/joke/any")
                 .retrieve()
                 .bodyToMono(JokeAPIResponse.class)
                 .map(this::mapToJoke)

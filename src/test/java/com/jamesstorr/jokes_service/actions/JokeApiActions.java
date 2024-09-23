@@ -11,7 +11,6 @@ import org.springframework.stereotype.Component;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.notNullValue;
 
-
 public class JokeApiActions {
 
     private String provider;
@@ -20,12 +19,8 @@ public class JokeApiActions {
     @MockBean
     private JokeService jokeService;
 
-    // Default constructor required by Serenity
     public JokeApiActions() {
-    }
-
-    public JokeApiActions(@Value("${local.server.port}") int port) {
-        this.baseUrl = "http://localhost:" + port;
+        this.baseUrl = "http://localhost:" + 8080;
     }
 
     public void givenJokeProvider(String provider) {
@@ -70,5 +65,10 @@ public class JokeApiActions {
     public void thenIShouldReceiveAChuckNorrisJoke(){
         SerenityRest.then()
                 .body("punchline", equalTo("Chuck Norris can divide by zero"));
+    }
+
+    public void thenIShouldReceiveACJokesAPIJoke(){
+        SerenityRest.then()
+                .body("punchline", equalTo("This is a joke from JokeAPI"));
     }
 }

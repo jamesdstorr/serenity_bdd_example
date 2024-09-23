@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="1" failures="0" name="com.jamesstorr.jokes_service.acceptancetests.WhenRequestingAJoke" skipped="0" tests="1" time="0.01" timestamp="2024-09-23 02:56:37"><testcase classname="com.jamesstorr.jokes_service.acceptancetests.WhenRequestingAJoke" name="Should be able to retrieve a joke with the Chuck Norris provider"><error message="Expected response body to be verified as JSON, HTML or XML but no content-type was defined in the response.&#10;Try registering a default parser using:&#10;   RestAssured.defaultParser(&lt;parser type&gt;);&#10;Content was:&#10;&#10;" type="java.lang.IllegalStateException">Expected response body to be verified as JSON, HTML or XML but no content-type was defined in the response.
+Try registering a default parser using:
+   RestAssured.defaultParser(&lt;parser type&gt;);
+Content was:
+
+</error><system-err>Expected response body to be verified as JSON, HTML or XML but no content-type was defined in the response.
+Try registering a default parser using:
+   RestAssured.defaultParser(&lt;parser type&gt;);
+Content was:
+
+
+io.restassured.assertion.StreamVerifier.newAssertion(StreamVerifier.groovy:43)
+io.restassured.internal.assertion.BodyMatcher.validate(BodyMatcher.java:93)
+io.restassured.internal.assertion.BodyMatcherGroup.lambda$validate$0(BodyMatcherGroup.java:30)
+io.restassured.internal.assertion.BodyMatcherGroup.validate(BodyMatcherGroup.java:30)
+io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
+io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
+io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:270)
+io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:117)
+io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:244)
+com.jamesstorr.jokes_service.actions.JokeApiActions.thenIShouldReceiveAChuckNorrisJoke(JokeApiActions.java:68)
+com.jamesstorr.jokes_service.acceptancetests.WhenRequestingAJoke.requesting_a_joke_with_chucknorris_provider(WhenRequestingAJoke.java:77)
+</system-err></testcase></testsuite>

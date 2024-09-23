@@ -1,4 +1,4 @@
 $(document).ready(function() {
-CucumberHTML.timelineItems.pushArray([{"id":"4607aa2e-9d59-488d-9008-efaf084e6ea6","feature":"Jokes Service","scenario":"Retrieve a joke from a specific provider","start":1727075504256,"group":1,"content":"","tags":"","end":1727075504258,"className":"failed"},{"id":"f9380e59-e762-4279-af16-946fdbfc4fe5","feature":"Jokes Service","scenario":"Retrieve a joke without specifying a provider","start":1727075504240,"group":1,"content":"","tags":"","end":1727075504250,"className":"failed"}]);
-CucumberHTML.timelineGroups.pushArray([{"id":1,"content":"Thread[#1,main,5,main]"}]);
+CucumberHTML.timelineItems.pushArray([{"id":"a8e99f2f-71f7-4cb4-af83-cfe16f7485b2","feature":"Jokes Service","scenario":"Retrieve a joke without specifying a provider","start":1727082773707,"group":1,"content":"","tags":"","end":1727082773723,"className":"failed"},{"id":"2cb09d5b-fa3b-4f74-a583-ad51e7cb4dca","feature":"Jokes Service","scenario":"Retrieve a joke from a specific provider","start":1727082773732,"group":1,"content":"","tags":"","end":1727082773735,"className":"failed"}]);
+CucumberHTML.timelineGroups.pushArray([{"id":1,"content":"Thread[main,5,main]"}]);
 });

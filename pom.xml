@@ -173,7 +173,6 @@
 						<include>**/*Tests.java</include>
 						<include>**/*TestSuite.java</include>
 						<inlcud>**/When*.java</inlcud>
-						<include>**/*TestSuite.java</include>
 					</includes>
 				</configuration>
 			</plugin>
