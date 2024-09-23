@@ -127,6 +127,7 @@
 				<configuration>
 					<includes>
 						<include>**/*Test.java</include>
+						<include>acceptancetests/*</include>
 					</includes>
 				</configuration>
 			</plugin>

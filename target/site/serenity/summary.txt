@@ -1,7 +1,7 @@
-Serenity report generated 22-09-2024 18:05:36
+Serenity report generated 23-09-2024 05:54:14
 
-Test Cases:         0 
-Passed:             0
+Test Cases:         4 
+Passed:             4
 Failed:             0
 Failed with errors: 0
 Compromised:        0

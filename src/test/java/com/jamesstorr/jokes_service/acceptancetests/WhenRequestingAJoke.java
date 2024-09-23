@@ -2,11 +2,13 @@ package com.jamesstorr.jokes_service.acceptancetests;
 
 import com.github.tomakehurst.wiremock.WireMockServer;
 import com.jamesstorr.jokes_service.actions.JokeApiActions;
+import net.serenitybdd.junit5.SerenityJUnit5Extension;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.test.context.ActiveProfiles;
@@ -18,6 +20,7 @@ import static com.github.tomakehurst.wiremock.client.WireMock.*;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 @ActiveProfiles("test")
+@ExtendWith(SerenityJUnit5Extension.class)
 public class WhenRequestingAJoke {
 
     JokeApiActions actions;
