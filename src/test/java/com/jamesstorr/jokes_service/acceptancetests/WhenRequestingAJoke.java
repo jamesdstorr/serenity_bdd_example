@@ -48,8 +48,7 @@ public class WhenRequestingAJoke {
     @BeforeEach
     public void setupStubs() {
 
-        String baseUrl = "http://localhost:" + port;
-        actions = new JokeApiActions(baseUrl);
+        actions = new JokeApiActions(port);
 
         // Stub for OfficialJokeAPI
         wireMockServer.stubFor(get(urlEqualTo("/officialJoke/jokes/random"))

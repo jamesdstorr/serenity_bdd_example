@@ -1,27 +1,31 @@
 package com.jamesstorr.jokes_service.actions;
 
-
 import com.jamesstorr.jokes_service.application.service.JokeService;
 import io.restassured.response.Response;
 import net.serenitybdd.rest.SerenityRest;
-import org.junit.jupiter.api.BeforeEach;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.boot.test.web.server.LocalServerPort;
-import org.springframework.cache.support.NullValue;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.notNullValue;
 
+@Component
 public class JokeApiActions {
 
     private String provider;
-    private final String baseUrl;
+    private String baseUrl;
 
     @MockBean
     private JokeService jokeService;
 
-    public JokeApiActions(String baseUrl) {
-        this.baseUrl = baseUrl;
+    // Default constructor required by Serenity
+    public JokeApiActions() {
+    }
+
+    public JokeApiActions(@Value("${local.server.port}") int port) {
+        this.baseUrl = "http://localhost:" + port;
     }
 
     public void givenJokeProvider(String provider) {

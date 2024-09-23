@@ -1,3 +1,5 @@
 com/jamesstorr/jokes_service/acceptancetests/SimpleTest.class
 com/jamesstorr/jokes_service/acceptancetests/WhenRequestingAJoke.class
 com/jamesstorr/jokes_service/actions/JokeApiActions.class
+com/jamesstorr/jokes_service/steps/JokeStepDefinitions.class
+com/jamesstorr/jokes_service/runners/CucumberTestSuite.class
