@@ -26,11 +26,11 @@ public class OfficialJokeStrategy implements JokeStrategy {
     @Override
     public Joke getJoke() {
         return webclient.get()
-                .uri("/jokes/random")
-                .retrieve()
-                .bodyToMono(OfficialJokeResponse.class)
-                .map(this::mapToJoke)
-                .block();
+                    .uri("/jokes/random")
+                    .retrieve()
+                    .bodyToMono(OfficialJokeResponse.class)
+                    .map(this::mapToJoke)
+                    .block();
     }
 
     private Joke mapToJoke(OfficialJokeResponse response) {

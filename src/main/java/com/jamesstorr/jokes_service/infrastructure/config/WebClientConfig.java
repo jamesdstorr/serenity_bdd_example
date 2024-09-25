@@ -23,8 +23,11 @@ public class WebClientConfig {
 
     @Bean
     public WebClient jokeApiWebClient(@Value("${external.jokeapi.base-url}") String baseUrl) {
-        return WebClient.builder()
+        System.out.printf("Using Base URL: %s", baseUrl);
+        WebClient client = WebClient.builder()
                 .baseUrl(baseUrl)
                 .build();
+        System.out.println(client);
+        return client;
     }
 }

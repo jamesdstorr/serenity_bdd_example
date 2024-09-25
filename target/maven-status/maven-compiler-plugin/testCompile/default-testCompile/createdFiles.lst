@@ -1,5 +1,5 @@
-com/jamesstorr/jokes_service/acceptancetests/WhenRequestingAJoke.class
-com/jamesstorr/jokes_service/actions/JokeApiActions.class
-com/jamesstorr/bdd/CucumberIntegrationTest.class
-com/jamesstorr/bdd/config/WiremockConfig.class
-com/jamesstorr/bdd/stubs/JokeApiStubs.class
+com/jamesstorr/jokes_service/bdd/runner/SpringRunnerTests.class
+com/jamesstorr/jokes_service/bdd/steps/JokeStepDefinitions.class
+com/jamesstorr/jokes_service/bdd/actions/JokeApiActions.class
+com/jamesstorr/jokes_service/bdd/stubs/JokeApiStubs.class
+com/jamesstorr/jokes_service/bdd/config/WiremockConfig.class

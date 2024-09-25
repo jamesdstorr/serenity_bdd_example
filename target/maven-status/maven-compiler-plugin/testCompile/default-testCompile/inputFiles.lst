@@ -1,5 +1,5 @@
-/Users/jamesstorr/Personal Projects/serenity_bdd_example/src/test/java/com/jamesstorr/jokes_service/actions/JokeApiActions.java
-/Users/jamesstorr/Personal Projects/serenity_bdd_example/src/test/java/com/jamesstorr/bdd/CucumberIntegrationTest.java
-/Users/jamesstorr/Personal Projects/serenity_bdd_example/src/test/java/com/jamesstorr/bdd/stubs/JokeApiStubs.java
-/Users/jamesstorr/Personal Projects/serenity_bdd_example/src/test/java/com/jamesstorr/jokes_service/acceptancetests/WhenRequestingAJoke.java
-/Users/jamesstorr/Personal Projects/serenity_bdd_example/src/test/java/com/jamesstorr/bdd/config/WiremockConfig.java
+/Users/jamesstorr/Personal_Projects/serenity_bdd_example/src/test/java/com/jamesstorr/jokes_service/bdd/steps/JokeStepDefinitions.java
+/Users/jamesstorr/Personal_Projects/serenity_bdd_example/src/test/java/com/jamesstorr/jokes_service/bdd/config/WiremockConfig.java
+/Users/jamesstorr/Personal_Projects/serenity_bdd_example/src/test/java/com/jamesstorr/jokes_service/bdd/actions/JokeApiActions.java
+/Users/jamesstorr/Personal_Projects/serenity_bdd_example/src/test/java/com/jamesstorr/jokes_service/bdd/stubs/JokeApiStubs.java
+/Users/jamesstorr/Personal_Projects/serenity_bdd_example/src/test/java/com/jamesstorr/jokes_service/bdd/runner/SpringRunnerTests.java

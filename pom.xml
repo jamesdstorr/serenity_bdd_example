@@ -21,11 +21,15 @@
 
 	<properties>
 		<java.version>17</java.version>
-		<serenity.version>4.2.1</serenity.version>
-		<junit5.version>5.11.0</junit5.version>
+		<serenity.version>4.0.18</serenity.version>
 		<junit-vintage-engine.version>5.11.0</junit-vintage-engine.version>
-		<junit-platform-suite.version>1.11.0</junit-platform-suite.version>
-		<cucumber-junit-platform-engine.version>7.16.1</cucumber-junit-platform-engine.version>
+		<maven.compiler.source.version>17</maven.compiler.source.version>
+		<maven.compiler.target.version>17</maven.compiler.target.version>
+		<junit.platform.version>1.10.0</junit.platform.version>
+		<maven.compiler.plugin>3.11.0</maven.compiler.plugin>
+		<maven.surefire.plugin.version>3.2.1</maven.surefire.plugin.version>
+		<maven.failsafe.plugin.version>3.2.1</maven.failsafe.plugin.version>
+		<cucumber.version>7.14.0</cucumber.version>
 		<tags></tags>
 	</properties>
 
@@ -33,29 +37,9 @@
 		<!-- Spring Boot Dependencies -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-webflux</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<scope>runtime</scope>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>org.assertj</groupId>
-			<artifactId>assertj-core</artifactId>
-			<version>3.22.0</version>
-			<scope>test</scope>
-		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -63,50 +47,77 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-webflux</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+		<!-- Serenity Core -->
+		<dependency>
 			<groupId>net.serenity-bdd</groupId>
 			<artifactId>serenity-core</artifactId>
 			<version>${serenity.version}</version>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- Serenity With Cucumber -->
 		<dependency>
 			<groupId>net.serenity-bdd</groupId>
-			<artifactId>serenity-junit5</artifactId>
+			<artifactId>serenity-cucumber</artifactId>
 			<version>${serenity.version}</version>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>net.serenity-bdd</groupId>
-			<artifactId>serenity-screenplay</artifactId>
-			<version>${serenity.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>net.serenity-bdd</groupId>
-			<artifactId>serenity-ensure</artifactId>
-			<version>${serenity.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>net.serenity-bdd</groupId>
-			<artifactId>serenity-screenplay-webdriver</artifactId>
-			<version>${serenity.version}</version>
-			<scope>test</scope>
-		</dependency>
+
+		<!-- Serenity With Rest Assured -->
 		<dependency>
 			<groupId>net.serenity-bdd</groupId>
 			<artifactId>serenity-rest-assured</artifactId>
 			<version>${serenity.version}</version>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>net.serenity-bdd</groupId>
-			<artifactId>serenity-cucumber</artifactId>
-			<version>${serenity.version}</version>
-		</dependency>
+
+		<!-- Serenity With Spring -->
 		<dependency>
 			<groupId>net.serenity-bdd</groupId>
 			<artifactId>serenity-spring</artifactId>
 			<version>${serenity.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-junit-platform-engine</artifactId>
+			<version>${cucumber.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.junit.platform</groupId>
+			<artifactId>junit-platform-suite</artifactId>
+			<version>${junit.platform.version}</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -123,71 +134,55 @@
 			<artifactId>wiremock-jetty12</artifactId>
 			<version>3.9.1</version>
 		</dependency>
-
-
-		<dependency>
-			<groupId>io.cucumber</groupId>
-			<artifactId>cucumber-java</artifactId>
-			<version>7.14.0</version>
-		</dependency>
-
-		<dependency>
-			<groupId>io.cucumber</groupId>
-			<artifactId>cucumber-junit</artifactId>
-			<version>7.14.0</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.junit.platform</groupId>
-			<artifactId>junit-platform-suite</artifactId>
-			<version>${junit-platform-suite.version}</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>io.cucumber</groupId>
-			<artifactId>cucumber-junit-platform-engine</artifactId>
-			<version>${cucumber-junit-platform-engine.version}</version>
-			<scope>test</scope>
-		</dependency>
 	</dependencies>
 
 	<build>
 		<plugins>
-			<!-- Spring Boot Maven Plugin -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<!-- Removed exclusion of Lombok to ensure proper functionality -->
-				</configuration>
 			</plugin>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>3.1.2</version>
+				<version>${maven.surefire.plugin.version}</version>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>${maven.failsafe.plugin.version}</version>
 				<configuration>
 					<includes>
 						<include>**/*Test.java</include>
-						<include>**/*Tests.java</include>
+						<include>**/SpringRunnerTests.java</include>
 						<include>**/*TestSuite.java</include>
-						<inlcud>**/When*.java</inlcud>
+						<include>**/When*.java</include>
 					</includes>
+					<parallel>classes</parallel>
+					<parallel>methods</parallel>
+					<useUnlimitedThreads>true</useUnlimitedThreads>
 				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>integration-test</goal>
+							<goal>verify</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.1</version>
+				<version>${maven.compiler.plugin}</version>
 				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
+					<source>${maven.compiler.source.version}</source>
+					<target>${maven.compiler.target.version}</target>
 				</configuration>
 			</plugin>
-
-
-			<!-- Serenity Maven Plugin -->
 			<plugin>
 				<groupId>net.serenity-bdd.maven.plugins</groupId>
 				<artifactId>serenity-maven-plugin</artifactId>
@@ -195,13 +190,6 @@
 				<configuration>
 					<tags>${tags}</tags>
 				</configuration>
-				<dependencies>
-					<dependency>
-						<groupId>net.serenity-bdd</groupId>
-						<artifactId>serenity-single-page-report</artifactId>
-						<version>${serenity.version}</version>
-					</dependency>
-				</dependencies>
 				<executions>
 					<execution>
 						<id>serenity-reports</id>
