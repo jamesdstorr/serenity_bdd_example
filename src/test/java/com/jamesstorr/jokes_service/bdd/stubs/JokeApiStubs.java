@@ -1,12 +1,15 @@
 package com.jamesstorr.jokes_service.bdd.stubs;
 
 import com.github.tomakehurst.wiremock.WireMockServer;
+import com.jamesstorr.jokes_service.bdd.config.WiremockConfig;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Import;
 import org.springframework.stereotype.Component;
 
 import static com.github.tomakehurst.wiremock.client.WireMock.*;
 
 @Component
+@Import(WiremockConfig.class)
 public class JokeApiStubs {
 
     @Autowired

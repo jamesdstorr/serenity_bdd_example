@@ -16,7 +16,6 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.notNullValue;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@Import(WiremockConfig.class)
 @ActiveProfiles("test")
 public class JokeApiActions {
 
@@ -24,9 +23,6 @@ public class JokeApiActions {
 
     @LocalServerPort
     private int port;
-
-    @Autowired
-    private WireMockServer wireMockServer;
 
     @Autowired
     private JokeApiStubs jokeApiStubs;
